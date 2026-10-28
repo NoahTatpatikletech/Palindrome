@@ -1,18 +1,14 @@
 import sys
 
-num = int(sys.argv[1])
+if len(sys.argv) < 2:
+    sys.exit(1)
 
-original_num = num   
-rev = 0
+original = sys.argv[1]   
+reversed_input = original[::-1]
 
-while num != 0:
-    digit = num % 10
-    rev = rev * 10 + digit
-    num = num // 10  
+print("The reversed value is =", reversed_input)
 
-print("The reversed number is =", rev)
-
-if original_num == rev:
-    print("The number is a palindrome")
+if original == reversed_input:
+    print("It is a palindrome")
 else:
-    print("The number is not a palindrome")
+    print("It is not a palindrome")
